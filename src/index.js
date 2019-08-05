@@ -18,13 +18,7 @@ class App extends React.Component{
 
     }
 
-
-    //returning JSX
-
-    render(){
-
-        console.log("component rendered");
-
+    getRenderingStuff(){
         if(this.state.error){
             return <Error errorMessage={this.state.error}/>
         }
@@ -34,6 +28,20 @@ class App extends React.Component{
         }
 
         return <Loader />
+    }
+
+
+    //returning JSX
+
+    render(){
+
+        console.log("component rendered");
+        return (
+            <div>
+                {this.getRenderingStuff()}
+            </div>
+        )
+       
     }
 
     //content visible on screen
